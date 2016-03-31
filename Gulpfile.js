@@ -167,7 +167,7 @@ gulp.task('lint:css', function() {
  * @lint html
  * ------------------------------------------------------------------------ */
 gulp.task('lint:html', function() {
-    return gulp.src(app.html.dest + '/**/*.html')
+    return gulp.src(app.views.dest + '/**/*.html')
         .pipe($.htmlhint('.htmlhintrc'))
         .pipe($.htmlhint.reporter());
 });
@@ -181,7 +181,7 @@ gulp.task('rmDir', function() {
               '.sass-cache'
             , '.tmp'
             , './_gh*'
-            , './site/*'
+            , './_site/*'
         ], {read: false})
         .pipe($.clean({force: true}));
 });
