@@ -29,22 +29,18 @@ var siteServer = {
 // App Path
 var app  = {
     filename: 'myapp',
-
     views: {
         src: './app',
         dest: './_site'
     },
-
     js: {
         src: './app/assets/js', 
         dest: './_site/assets/js'
     },
-
     css: {
         src: './app/assets/css',
         dest: './_site/assets/css'
     },
-
     img: {
         src: './app/assets/img',
         dest: './_site/assets/img'
@@ -100,7 +96,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(app.css.dest));
 
 // App Quenn | Compressed (minify)
-    return gulp.src(app.sass.src)
+    return gulp.src(app.sass.src + '/**/*.scss')
         .pipe($.scssLint({'config': '.scsslintrc'}))
         .pipe($.sourcemaps.init())
         .pipe($.plumber({errorHandler: $.notify.onError("Error :: <%= error.message %>")}))
