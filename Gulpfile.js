@@ -141,8 +141,8 @@ gulp.task('views', function() {
  * @jsHint
  * ------------------------------------------------------------------------ */
 gulp.task('lint:js', function() {
-    return gulp.src(app.js.dest + '/**/*.js')
-        .pipe($.jshint())
+    return gulp.src(app.js.dest + app.filename + '.js')
+        .pipe($.jshint('.jshintrc'))
         .pipe($.jshint.reporter('default'));
 });
 
@@ -249,3 +249,14 @@ gulp.task('sync', function() {
  * @ Default Task
  * ------------------------------------------------------------------------ */
 gulp.task('default', ['serve']);
+
+/**
+ * @test ['development']
+ * ------------------------------------------------------------------------ */
+gulp.task('test', $.sequence(
+      'rmDir'
+    , 'js', 'lint:js'
+    , 'sass', 'lint:css'
+    , 'views', 'lint:html'
+    , 'img'
+));
