@@ -225,7 +225,7 @@ gulp.task('production', $.sequence(
  * ------------------------------------------------------------------------ */
 gulp.task('watch', function() {
     gulp.watch([app.js.src     + '/**/*.js'],   ['js']);    // watch and build js
-    gulp.watch([app.sass.src   + '/**/*.scss'], ['sass']);  // watch and build sass
+    gulp.watch([app.css.src   + '/**/*.scss'], ['sass']);  // watch and build sass
     gulp.watch([app.views.src  + '/**/*.jade'], ['views']); // watch and build views
     gulp.watch([app.views.dest + '/**/*']).on('change', function() { browserSync.reload(); }); // reloadBrowser
 });
