@@ -1,0 +1,48 @@
+{
+    "doctype-first": false,
+    "doctype-html5": true,
+    "title-require": true,
+    "head-script-disabled": true,
+    "id-unique": true,
+    "id-class-ad-disabled": true,
+    "attr-lowercase": true,
+    "tagname-lowercase": true,
+    "tag-pair": true,
+    "attr-value-double-quotes": true,
+    "attr-value-not-empty": true,
+    "tag-self-close": false,
+    "spec-char-escape": true,
+    "src-not-empty": true,
+    "attr-no-duplication": true,
+    "alt-require": true,
+
+    "style-disabled": true,
+    "inline-style-disabled": true,
+    "inline-script-disabled": true,
+
+    "href-abs-or-rel": false,
+    "attr-unsafe-chars": false,
+
+    "space-tab-mixed-disabled": "space",
+
+    "id-class-value": [
+        "underline",
+        "dash"
+    ]
+}
+
+// ID Class Value
+// underline: underline mode ( aaa_bb )
+// dash: enable rule ( aaa-bbb )
+// hump: enable rule ( aaaBbb )
+// false: disable rule
+
+// Space or Tabs
+// space: space mode (only space for indentation)
+// tab: tab mode (only tab for indentation)
+// false: disable rule
+
+
+// abs: absolute mode
+// rel: relative mode
+// false: disable rule

@@ -1,0 +1,14 @@
+doctype html
+html(lang="id-ID")
+    head: include ./_partials/head.jade
+
+    body: .container
+        aside
+            include ./_partials/main-nav.jade
+            block sidebar
+
+        main
+            block content
+
+        // [script] 
+        include ./_partials/scripts.jade

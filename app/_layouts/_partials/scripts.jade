@@ -1,0 +1,13 @@
+// [js vendor] 
+script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js")
+script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+
+// [Site JS & Stuff] 
+script(type="text/javascript" src!="<%= baseUrl %>/assets/js/<%= appName %>.js")
+
+// [Google Analytics: change UA-XXXXX-Y to be your site's ID.] 
+script.
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');
+    ga('send','pageview')
+script(src="https://www.google-analytics.com/analytics.js", async="async", defer="defer")

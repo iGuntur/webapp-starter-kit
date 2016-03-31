@@ -1,0 +1,14 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Server
+source:           _site
+destination:      _gh-pages
+host:             0.0.0.0
+port:             5000
+url:              http://iguntur.info/
+encoding:         UTF-8

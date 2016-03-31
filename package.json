@@ -1,0 +1,50 @@
+{
+  "name": "queen-starter-kit",
+  "version": "1.0.0",
+  "description": "WebApp Static Site",,
+  "main": "_site/index.html",
+  "scripts": {
+    "test": "echo 'test'"
+  },
+  "homepage": "http://iguntur.info/",
+  "license": "MIT",
+  "author": {
+    "name": "Guntur Excel - @ghun_tur",
+    "url": "http://iguntur.info"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "~2.11.*",
+    "gulp": "~3.9.*",
+    "gulp-autoprefixer": "~3.1.*",
+    "gulp-clean": "~0.3.*",
+    "gulp-clean-css": "~2.0.*",
+    "gulp-concat": "~2.6.*",
+    "gulp-csslint": "~0.2.*",
+    "gulp-data": "^1.2.1",
+    "gulp-header": "~1.7.*",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-jade": "~1.1.*",
+    "gulp-jshint": "~2.0.*",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-notify": "~2.2.*",
+    "gulp-plumber": "~1.1.*",
+    "gulp-remove-empty-lines": "~0.0.*",
+    "gulp-sass": "~2.2.*",
+    "gulp-scss-lint": "^0.3.9",
+    "gulp-sequence": "^0.4.5",
+    "gulp-sourcemaps": "~1.6.*",
+    "gulp-strip-css-comments": "~1.2.*",
+    "gulp-template": "^3.1.0",
+    "gulp-uglify": "~1.5.*",
+    "gulp-util": "~3.0.*",
+    "gulp-watch": "~4.3.*",
+    "jshint": "~2.9.*",
+    "jstransformer": "~0.0.*",
+    "jstransformer-marked": "~1.0.*",
+    "scss-lint": "0.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.1"
+  }
+}
