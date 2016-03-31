@@ -64,7 +64,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest(app.js.dest));
 
 // Compressed | concating file
-    return gulp.src(app.js.src)
+    return gulp.src(app.js.src + '/**/*.js')
         .pipe($.sourcemaps.init())
         .pipe($.plumber({errorHandler: $.notify.onError("Error :: <%= error.message %>")}))
         .pipe($.uglify()) // <- Compressed
@@ -96,7 +96,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(app.css.dest));
 
 // App Quenn | Compressed (minify)
-    return gulp.src(app.sass.src + '/**/*.scss')
+    return gulp.src(app.css.src + '/**/*.scss')
         .pipe($.scssLint({'config': '.scsslintrc'}))
         .pipe($.sourcemaps.init())
         .pipe($.plumber({errorHandler: $.notify.onError("Error :: <%= error.message %>")}))
@@ -110,7 +110,7 @@ gulp.task('sass', function() {
         .pipe($.removeEmptyLines())
         .pipe($.header('@charset "UTF-8";\n' + banner, { pkg : pkg } ))
         .pipe($.sourcemaps.write('.', { includeContent: false }))
-        .pipe(gulp.dest(app.sass.dest));
+        .pipe(gulp.dest(app.css.dest));
 });
 
 /**
@@ -199,9 +199,10 @@ gulp.task('rmDir', function() {
  * ------------------------------------------------------------------------ */
 gulp.task('serve', $.sequence(
       'rmDir'
-    , 'js'
+    , 'js', 'lint:js'
     , 'sass', 'lint:css'
     , 'views', 'lint:html'
+    , 'img'
     , 'sync'
     , 'watch'
 ));
@@ -211,9 +212,10 @@ gulp.task('serve', $.sequence(
  * ------------------------------------------------------------------------ */
 gulp.task('production', $.sequence(
       'rmDir'
-    , 'js'
+    , 'js', 'lint:js'
     , 'sass', 'lint:css'
     , 'views', 'lint:html'
+    , 'img'
 ));
 
 
