@@ -23,7 +23,7 @@ var banner = [
 
 var siteServer = {
     host : 'http://0.0.0.0',
-    port : 5000
+    port : 6001
 };
 
 // App Path

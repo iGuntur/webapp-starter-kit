@@ -9,6 +9,6 @@ permalink:        pretty
 source:           _site
 destination:      _gh-pages
 host:             0.0.0.0
-port:             5000
+port:             6001
 url:              http://iguntur.info/
 encoding:         UTF-8
