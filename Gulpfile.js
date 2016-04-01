@@ -9,7 +9,7 @@ var fs = require('fs')
 , transformer = require('jstransformer');
 
 
-// Queen Header from package.json 
+// Header from package.json 
 var pkg    = require('./package.json');
 var banner = [
   '/*!',
@@ -51,7 +51,7 @@ var app  = {
 
 
 /**
- * @app | Queen JS Task
+ * @app | JS Task
  * ------------------------------------------------------------------------ */
 gulp.task('js', function() {
 // Uncompressed | concating file
@@ -75,10 +75,10 @@ gulp.task('js', function() {
 });
 
 /**
- * @app | Queen SASS Task
+ * @app | SASS Task
  * ------------------------------------------------------------------------ */
 gulp.task('sass', function() {
-// App Quenn | Uncompressed
+// CSS | Uncompressed
     gulp.src(app.css.src + '/**/*.scss')
         .pipe($.scssLint({'config': '.scsslintrc'}))
         .pipe($.sourcemaps.init())
@@ -95,7 +95,7 @@ gulp.task('sass', function() {
         .pipe($.sourcemaps.write('.', { includeContent: false }))
         .pipe(gulp.dest(app.css.dest));
 
-// App Quenn | Compressed (minify)
+// CSS Compressed (minify)
     return gulp.src(app.css.src + '/**/*.scss')
         .pipe($.scssLint({'config': '.scsslintrc'}))
         .pipe($.sourcemaps.init())
@@ -123,7 +123,7 @@ gulp.task('img', function() {
 
 
 /**
- * @view | docs | site
+ * @view
  * Jade Task - HTML
  * ------------------------------------------------------------------------ */
 gulp.task('views', function() {
@@ -191,7 +191,7 @@ gulp.task('rmDir', function() {
 //  * ------------------------------------------------------------------------ */
 // gulp.task('copy', function() {
 //     // 1. copy from app dist -> docs assets
-//     gulp.src(app.dist+'/**').pipe(gulp.dest(docs.assets));
+//     gulp.src('./src').pipe(gulp.dest('./dest'));
 // });
 
 /**
@@ -225,7 +225,7 @@ gulp.task('production', $.sequence(
  * ------------------------------------------------------------------------ */
 gulp.task('watch', function() {
     gulp.watch([app.js.src     + '/**/*.js'],   ['js']);    // watch and build js
-    gulp.watch([app.css.src   + '/**/*.scss'], ['sass']);  // watch and build sass
+    gulp.watch([app.css.src    + '/**/*.scss'], ['sass']);  // watch and build sass
     gulp.watch([app.views.src  + '/**/*.jade'], ['views']); // watch and build views
     gulp.watch([app.views.dest + '/**/*']).on('change', function() { browserSync.reload(); }); // reloadBrowser
 });
